@@ -35,4 +35,11 @@ form.addEventListener("submit", (event) => {
       console.error("An error occurred: Division by zero or non-numeric value provided.");
       return;
     }
+
+    const resultValue = Math.floor(dividendNumber / divisorNumber);
+    result.innerText = resultValue.toString();
+  } catch (error) {
+    console.error("An error occurred:", error);
+    result.innerText = "Something critical went wrong. Please reload the page.";
+  }
 });
