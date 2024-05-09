@@ -5,7 +5,6 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
-  result.innerText = dividend / divider;
 
   // Error handling: check if inputs are empty
   if (!dividend || !divider) {
