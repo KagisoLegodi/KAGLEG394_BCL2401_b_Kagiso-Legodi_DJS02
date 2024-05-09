@@ -11,7 +11,15 @@ form.addEventListener("submit", (event) => {
     result.classList.add("error-message");
     result.innerText =
       "Division not performed. Both values are required in inputs. Try again.";
-      console.error("An error occurred:");
+    return;
+  }
+
+  // Error handling: check if inputs contain invalid characters
+  const validInputRegex = /^[0-9]+$/;
+  if (!validInputRegex.test(dividend) || !validInputRegex.test(divider)) {
+    result.classList.add("critical-error");
+    result.innerText = "Something critical went wrong. Please reload the page.";
+    console.error("An error occurred: Non-numeric value provided.");
     return;
   }
 });
