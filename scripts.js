@@ -36,8 +36,8 @@ form.addEventListener("submit", (event) => {
       return;
     }
 
-    const resultValue = Math.floor(dividendNumber / divisorNumber);
-    result.innerText = resultValue.toString();
+    const resultValue = dividendNumber / divisorNumber;
+    result.innerText = Math.floor(resultValue).toString(); // Display only the integer part
   } catch (error) {
     console.error("An error occurred:", error);
     result.innerText = "Something critical went wrong. Please reload the page.";
