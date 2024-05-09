@@ -32,7 +32,9 @@ form.addEventListener("submit", (event) => {
     if (isNaN(dividendNumber) || isNaN(divisorNumber) || divisorNumber === 0) {
       result.innerText =
         "Invalid input: Division by zero or non-numeric value provided.";
-      console.error("An error occurred: Division by zero or non-numeric value provided.");
+      console.error(
+        "An error occurred: Division by zero or non-numeric value provided."
+      );
       return;
     }
 
