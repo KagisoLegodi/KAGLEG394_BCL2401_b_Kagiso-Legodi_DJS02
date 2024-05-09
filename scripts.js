@@ -22,4 +22,17 @@ form.addEventListener("submit", (event) => {
     console.error("An error occurred: Non-numeric value provided.");
     return;
   }
+
+  try {
+    // Force Number conversion
+    const dividendNumber = Number(dividend);
+    const divisorNumber = Number(divider);
+
+    // Check for other numeric errors
+    if (isNaN(dividendNumber) || isNaN(divisorNumber) || divisorNumber === 0) {
+      result.innerText =
+        "Invalid input: Division by zero or non-numeric value provided.";
+      console.error("An error occurred: Division by zero or non-numeric value provided.");
+      return;
+    }
 });
